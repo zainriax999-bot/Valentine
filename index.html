@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Be My Valentine 💖</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      width: 320px;
+      position: relative;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    img {
+      width: 120px;
+      margin: 15px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .yes-button {
+      background: #e11d48;
+      color: white;
+    }
+
+    .no-button {
+      background: #e5e7eb;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Aliza 💕</h1>
+    <p>Will you be my Valentine?</p>
+
+    <img src="bear.png" alt="Cute Bear">
+
+    <br>
+    <button class="yes-button" onclick="handleYesClick()">Yes 💖</button>
+    <button class="no-button" onmouseover="runAway()">No 🙄</button>
+  </div>
+
+  <script>
+    function runAway() {
+      const noButton = document.querySelector('.no-button');
+      const card = document.querySelector('.card');
+
+      const maxX = card.clientWidth - noButton.offsetWidth;
+      const maxY = card.clientHeight - noButton.offsetHeight;
+
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+
+      noButton.style.left = randomX + "px";
+      noButton.style.top = randomY + "px";
+    }
+
+    function handleYesClick() {
+      window.location.href = "yes.html";
+    }
+  </script>
+
+</body>
+</html>
